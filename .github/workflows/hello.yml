@@ -15,10 +15,26 @@ jobs:
             - name: Hello World
               run: echo "Hello World from GitHub Actions!"
               shell: bash
+    neofetch:
+        runs-on: ubuntu-latest
+        steps:
             - name: Install neofetch
               run: sudo apt install neofetch
               shell: bash
             - name: Run neofetch
               run: neofetch
+              shell: bash
+    build-and-run:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Install Dependencies
+              run: sudo apt install build-essentials
+              shell: bash
+            - name: Build
+              run: g++ -o program main.cpp
+              shell: bash
+            - name: Run
+              run: ./program
               shell: bash
 
