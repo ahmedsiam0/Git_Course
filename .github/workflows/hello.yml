@@ -16,7 +16,7 @@ jobs:
               run: echo "Hello World from GitHub Actions!"
               shell: bash
             - name: Install neofetch
-              run: apt install neofetch
+              run: sudo apt install neofetch
               shell: bash
             - name: Run neofetch
               run: neofetch
